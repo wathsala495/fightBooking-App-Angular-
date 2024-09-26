@@ -1,0 +1,112 @@
+<div class=" bg-primary">
+     <div class="container ">
+        <div class="d-flex justify-content-between align-items-center">
+            <div>
+                <h1>Logo</h1>
+             </div>
+             <div class="d-flex justify-content-center align-items-center ">
+                <ul class="d-flex list-unstyled  gap-4 mt-2">
+                  <li  class="fs-5" *ngIf="loggerUserdata">{{loggerUserdata.email}}</li>
+                    <li class="fs-5" >Home</li>
+                    <li class="fs-5">Traines</li>
+                    <li class="fs-5" *ngIf="!loggerUserdata"><a (click)="openLoginModel()">Login</a></li>
+                    <li class="fs-5"  *ngIf="loggerUserdata"><a (click)="logOff()">LogOff</a></li>
+                    <li class="fs-5" *ngIf="!loggerUserdata"><a  (click)="openRegModel()">Register</a></li>
+                </ul> 
+             </div>
+        </div>
+        
+     </div>
+</div>
+<router-outlet></router-outlet>
+
+<div class="modal" id="register">
+   <div class="modal-dialog">
+     <div class="modal-content">
+ 
+       <!-- Modal Header -->
+       <div class="modal-header">
+         <h4 class="modal-title">Register</h4>
+         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+       </div>
+ 
+       <!-- Modal body -->
+       <div class="modal-body">
+        <div>
+         <label for="">Name</label>
+         <br>
+         <input type="text" [(ngModel)]="name" class="w-100 ">
+        </div>
+        <div>
+         <label for="">Contact No</label>
+         <br>
+         <input type="text" [(ngModel)]="contactNo" class="w-100 ">
+        </div>
+        <div>
+         <label for="">Email</label>
+         <br>
+         <input type="text" [(ngModel)]="email" class="w-100 ">
+        </div>
+        <div>
+         <label for="">City</label>
+         <br>
+         <input type="text" [(ngModel)]="city" class="w-100 ">
+        </div>
+        <div>
+         <label for="">Password</label>
+         <br>
+         <input type="text" [(ngModel)]="password" class="w-100 ">
+        </div>
+        <div> <label for="">Address</label>
+         <br>
+        <textarea name="" id="" [(ngModel)]="address" class="w-100 "></textarea>
+       </div>
+ 
+       <!-- Modal footer -->
+       <div class="modal-footer">
+         <button type="button" class="btn btn-danger" data-bs-dismiss="modal" (click)="closeRegModel()">Close</button>
+         <button type="button" class="btn btn-danger" data-bs-dismiss="modal" (click)="Register()">Register</button>
+       </div>
+ 
+     </div>
+   </div>
+ </div>
+ </div>
+
+
+<div class="modal" id="login">
+   <div class="modal-dialog">
+     <div class="modal-content">
+ 
+       <!-- Modal Header -->
+       <div class="modal-header">
+         <h4 class="modal-title">Login</h4>
+         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+       </div>
+ 
+       <!-- Modal body -->
+       <div class="modal-body">
+         <div >
+            <label for="email">Email:</label>
+            <br>
+        <input type="email"  [(ngModel)]="useremail" class="w-100 ">
+        {{useremail}}
+         </div>
+         <div>
+            <label for="password">Password:</label>
+            <br>
+        <input type="password" [(ngModel)]="userpw" class="w-100 ">
+         </div>
+         
+       </div>
+ 
+       <!-- Modal footer -->
+       <div class="modal-footer">
+         <button type="button" class="btn btn-danger" data-bs-dismiss="modal" (click)="closeLoginModel()">Close</button>
+         <button type="button" class="btn btn-danger" data-bs-dismiss="modal" (click)="login()">Login</button>
+       </div>
+ 
+     </div>
+   </div>
+ </div>
+

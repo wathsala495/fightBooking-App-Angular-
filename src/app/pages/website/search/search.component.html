@@ -1,0 +1,77 @@
+<div class="container">
+    <div class="mt-5">
+      <div class="row">
+        <div class="col-4 bg-dark p-4">
+           <div class="heading mb-3">One Way</div> 
+           <div class="d-flex flex-column">
+           <select name="" id="" class="p-2" [(ngModel)]="fromAirport">
+            <option value="">From</option>
+            <option value="" *ngFor="let item of airportList" [value]="item.airportId">{{item.airportName}}</option>
+           </select>
+           <select name="" id="" class="p-2" [(ngModel)]="toAirport">
+            <option value="">To</option>
+            <option value="" *ngFor="let item of airportList" [value]="item.airportId">{{item.airportName}}</option>
+           </select>
+            <input class="mb-3 p-2" type="date" placeholder="Travel Date" [(ngModel)]="travelDate" >
+            <input class="mb-3 p-2" type="text" placeholder="Number Of Travelers">
+            <button class="bg-danger" style="border: none;" (click)="searchFlight()">Submit</button>
+           </div>
+        </div>
+
+        <div class="col-8 ">
+           <div class="d-flex flex-column">
+            <div class="d-flex justify-content-between align-items-center border p-2">
+                <div>
+                    <h4>Chennai(MAA)</h4>
+                    <p>2024-03-06</p>
+                </div>
+                  <div>
+                   <h4>-></h4>
+                  </div>
+                <div>
+                    <h4>Coimbatore(CJB)</h4>
+                    <p>2024-03-06</p>
+                </div>
+          </div>
+          <div>
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">
+                        Flight Name</th>
+                    <th scope="col">Depature</th>
+                    <th scope="col">Arriaval</th>
+                    <th>Fare</th>
+                    <th>Price</th>
+                    <th></th>
+
+                   
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr  *ngFor="let item of serachedList ">
+                   
+                    <td>
+                    <img src={{item.vendorLogoUrl}}>
+                       {{item.vendorName}}</td>
+                    <td>{{item.flightNumber}}</td>
+                    <td>{{item.departureTime}}</td>
+                    <td>{{item.arrivalTime}}</td>
+                    <td>{{item.price}}</td>
+                    <td><button class="bg-danger "  style="border: none;">Book Now</button></td>
+                   
+                  </tr>
+                 
+                 
+                </tbody>
+              </table>
+          </div>
+       </div>
+           </div>
+      </div>
+      
+      
+     
+    </div>
+</div>
+<!-- 0:35 -->

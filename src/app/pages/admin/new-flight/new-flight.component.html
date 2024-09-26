@@ -1,0 +1,69 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h4>new Flight Form</h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+             <div class="mt-4">
+                <label for="">Flight No</label><br>
+                <input type="text" placeholder="Enter Flight No" [(ngModel)]="flightNumber">
+             </div>
+             <div class="row gap-5 mt-4">
+                <div class="col-3">
+                    <label for="">Sheduled Date</label>
+                    <br>
+                    <input type="date" placeholder="Select travel date" [(ngModel)]="travelDate">
+                    {{travelDate}}
+                </div>
+                <div class="col-3">
+                    <label for="">Depature Time</label>
+                    <br>
+                    <input type="text" placeholder="Select travel date" [(ngModel)]="departureTime">
+                </div>
+                <div class="col-3">
+                    <label for="">Arrival Time</label>
+                    <br>
+                    <input type="text" placeholder="Select travel date" [(ngModel)]="arrivalTime">
+                </div>
+             </div>
+             
+             <div class="row mt-4">
+                <div class="col-4">
+                    <label for="">Select Depature Airport</label>
+                    <br>
+                    <select name="" id="" [(ngModel)]="departureAirportId">
+                        <option value="">select </option>
+                        <option [value]="airport.airportId" *ngFor="let airport of airportList">{{airport.airportName}},{{airport.cityName}} </option>
+                    </select>
+                </div>
+                <div class="col-4">
+                    <label for="">Select Arrival Airport</label>
+                    <br>
+                    <select name="" id="" [(ngModel)]="arrivalAirportId">
+                        <option value="">select </option>
+                        <option [value]="airport.airportId" *ngFor="let airport of airportList">{{airport.airportName}},{{airport.cityName}} </option>
+                        
+                    </select>
+                </div>
+                <div class="row gap-5 mt-4">
+                    <div class="col-4">
+                        <label for="">Total Sealts</label>
+                        <br>
+                        <input type="text" placeholder="Enter total seats" [(ngModel)]="totalSeats">
+                    </div>
+                    <div class="col-4">
+                        <label for="">Total Price</label>
+                        <br>
+                        <input type="text" placeholder="Enter total price" [(ngModel)]="price">
+                    </div>
+                   
+                </div>
+                
+             </div>
+        </div>
+    </div>
+    <button class="btn btn-primary mt-4 mr-4" >Reset</button>
+     <button class="btn btn-success mt-4 ml-4" (click)="onSaveFlight()"> Create Flight</button>
+</div>

@@ -1,0 +1,39 @@
+<div class="row">
+    <div class="col-12">
+        <button class="btn btn-primary" [routerLink]="['/new-flight']">Add New</button>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Sr No</th>
+
+                <th>AirLine</th>
+                <th>Flight Number</th>
+                <th>Arrival Airport Name</th>
+                <th>Departure Airport Name</th>
+                <th>Travel Date</th>
+                <th>Price</th>
+                <th>Action</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let flight of fightlist ;let sr=index">
+          
+                <td>{{sr+1}}</td>
+                <td>{{flight.vendorName}}</td>
+                <td>{{flight.flightNumber}}</td>
+                <td>{{flight.arrivalAirportName}}</td>
+                <td>{{flight.departureAirportName}}</td>
+                <td>{{flight.travelDate |date:'dd-MM-yyyy'}}</td>
+                <td>{{flight.price}}</td>
+                <td></td>
+
+            </tr>
+        </tbody>
+      </table>
+    </div>
+</div>
